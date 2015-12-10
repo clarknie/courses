@@ -124,10 +124,10 @@ lines(testFaith$waiting,predict(lm1,newdata=testFaith),lwd=3)
 
 ```{r ,dependson="faithlm",fig.height=4,fig.width=4}
 # Calculate RMSE on training
-sqrt(sum((lm1$fitted-trainFaith$eruptions)^2))
+sqrt(mean((lm1$fitted-trainFaith$eruptions)^2))
 
 # Calculate RMSE on test
-sqrt(sum((predict(lm1,newdata=testFaith)-testFaith$eruptions)^2))
+sqrt(mean((predict(lm1,newdata=testFaith)-testFaith$eruptions)^2))
 ```
 
 ---
